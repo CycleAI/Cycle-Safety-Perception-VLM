@@ -1,11 +1,12 @@
 # Notebooks
 
-Notebooks are numbered in the order they should be run. Each stage's
-outputs feed into the next.
+Notebooks are numbered in analysis order. Some stages require restricted or
+unbundled inputs; see [the data guide](../Data/data_README.md). Saved notebook
+outputs and execution metadata have been cleared for the public release.
 
 | Notebook | Description |
 |---|---|
-| `01_gpt_voting_25k_validated_set__nokeys.ipynb` | Collects GPT-5.2 synthetic votes on the 25,560-pair validated set, used for human-AI alignment analysis (Stage 1). |
+| `01_gpt_voting_25k_validated_set _nokeys.ipynb` | Collects GPT-5.2 synthetic votes on the 25,560-pair validated set, used for human-AI alignment analysis (Stage 1). |
 | `02_gpt_voting_200k_extended_set_nokeys.ipynb` | Collects the additional ~200,000 GPT-5.2 votes used to build the extended safety ranking for Stage 2 prediction. |
 | `03_prompt_configuration.ipynb` | Evaluates alternative prompt designs and documents the final prompt configuration used for GPT-5.2 voting. |
 | `04_stage1_trueskill_ranking_and_agreement.ipynb` | Filters human votes, computes TrueSkill rankings for both sources, and evaluates human-AI agreement (Agreement Analyses A and B). |
@@ -17,12 +18,12 @@ outputs feed into the next.
 
 ## Requirements
 
-See each notebook's first cell for required packages. Notebooks were run on
-[Kaggle / your environment — specify].
+See each notebook's first cell for required packages. The notebooks include environment-specific paths that must be configured.
+A complete pinned runtime is not supplied.
 
 ## Note on credentials
 
-Notebooks that access Azure Blob Storage or CARTO basemaps read credentials
-from environment variables (`AZURE_CONN_STR`, `AZURE_OPENAI_API_KEY`,
+Configure credentials locally for notebooks that access Azure Blob Storage,
+Azure OpenAI or CARTO basemaps, using environment variables (`AZURE_CONN_STR`, `AZURE_OPENAI_API_KEY`,
 `CARTO_API_KEY`). No credentials are stored in these files. You will need
 your own credentials to re-run notebooks that fetch images or maps.
